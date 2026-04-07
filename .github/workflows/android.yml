@@ -22,8 +22,7 @@ jobs:
 
       - name: Build APK
         run: |
-          cd app
-          chmod +x ./gradlew
+          chmod +x ./gradlew     
           ./gradlew assembleDebug --no-daemon 2>&1          
 
       - name: Upload APK
