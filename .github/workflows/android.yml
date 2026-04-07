@@ -22,10 +22,16 @@ jobs:
         with:
           ndk-version: r25c
 
+      - name: Download Gradle
+        run: |
+          wget -q -O gradle.zip --no-proxy "https://services.gradle.org/distributions/gradle-4.6-bin.zip"
+          unzip -q gradle.zip
+          ls gradle-4.6/bin/          
+
       - name: Build APK
         run: |
-          chmod +x ./gradlew     
-          ./gradlew assembleDebug --no-daemon 2>&1                    
+          export PATH=$PWD/gradle-4.6/bin:$PATH
+          gradle assembleDebug --no-daemon -p app 2>&1          
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
