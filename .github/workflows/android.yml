@@ -26,7 +26,7 @@ jobs:
         run: |
           wget -q -O gradle.zip --no-proxy "https://services.gradle.org/distributions/gradle-7.6-bin.zip"
           unzip -q gradle.zip
-          ls gradle-4.6/bin/          
+          ls gradle-7.6/bin/      
 
       - name: Build APK
         run: |
