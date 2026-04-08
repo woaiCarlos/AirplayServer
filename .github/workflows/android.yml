@@ -30,7 +30,7 @@ jobs:
 
       - name: Build APK
         run: |
-          export PATH=$PWD/gradle-4.6/bin:$PATH
+          export PATH=$PWD/gradle-7.6/bin:$PATH
           gradle assembleDebug --no-daemon -p app 2>&1          
 
       - name: Upload APK
